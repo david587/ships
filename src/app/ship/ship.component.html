@@ -1,57 +1,60 @@
-<h3>Add Ship</h3>         
-          <form [formGroup]="hajoForm">
-            <div class="mb-3">
-              <label for="brand" class="form-label">Név</label>
-              <input type="text" class="form-control" id="brand"
-              formControlName="name" >              
-            </div>
-            <div class="mb-3">
-              <label for="brand" class="form-label">Hossz</label>
-              <input type="text" class="form-control" id="brand"
-              formControlName="length" >              
-            </div>
-            <div class="mb-3">
-              <label for="brand" class="form-label">Ár</label>
-              <input type="text" class="form-control" id="brand"
-              formControlName="price" >              
-            </div>
-            <div class="mb-3">
-              <label for="brand" class="form-label">Person</label>
-              <input type="text" class="form-control" id="brand"
-              formControlName="person" >              
-            </div>
-            <div class="mb-3">
-              <label for="brand" class="form-label">Trailer</label>
-              <input type="text" class="form-control" id="brand"
-              formControlName="trailer" >              
-            </div>
-          </form>
-
-          <button type="button" class="btn btn-primary"
-          (click)="onClick()">Save</button>
+<!--
+File: ship.component.html
+Author: Baráth Dávid
+Copyright: 2023, Baráth Dávid
+Group: Szoft 2 N
+Date: 2023-04-18
+Github: https://github.com/davis587/
+Licenc: GNU GPL
+-->
 
 <div class="container">
-    <h2>Ships</h2>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Név</th>
-          <th>Hossz</th>
-          <th>Ár</th>
-          <th>Személy</th>
-          <th>Trailer</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let ship of ships">
-          <td>{{ ship.name }}</td>
-          <td>{{ ship.length }}</td>
-          <td>{{ ship.price }}</td>
-          <td>{{ ship.person }}</td>
-          <td>{{ ship.trailer }}</td>
-        </tr>
-      </tbody>
-    </table>
+  <h2>Ships</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Név</th>
+        <th>Hossz</th>
+        <th>Ár</th>
+        <th>Személy</th>
+        <th>Trailer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ship of ships">
+        <td>{{ ship.name }}</td>
+        <td>{{ ship.length }}</td>
+        <td>{{ ship.price }}</td>
+        <td>{{ ship.person }}</td>
+        <td>{{ ship.trailer }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
-   
+<div class="container">
+  <h3>Add Ship</h3>
+  <form [formGroup]="hajoForm">
+    <div class="mb-3">
+      <label for="name" class="form-label">Név</label>
+      <input type="text" class="form-control" id="name" formControlName="name">
+    </div>
+    <div class="mb-3">
+      <label for="length" class="form-label">Hossz</label>
+      <input type="text" class="form-control" id="length" formControlName="length">
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Ár</label>
+      <input type="text" class="form-control" id="price" formControlName="price">
+    </div>
+    <div class="mb-3">
+      <label for="person" class="form-label">Person</label>
+      <input type="text" class="form-control" id="person" formControlName="person">
+    </div>
+    <div class="mb-3">
+      <label for="trailer" class="form-label">Trailer</label>
+      <input type="text" class="form-control" id="trailer" formControlName="trailer">
+    </div>
+    <button type="button" class="btn btn-primary" (click)="onClick()">Save</button>
+  </form>
+</div>

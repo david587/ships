@@ -1,3 +1,13 @@
+
+// File: ship.component.ts
+// Author: Baráth Dávid
+// Copyright: 2023, Baráth Dávid
+// Group: Szoft 2 N
+// Date: 2023-04-18
+// Github: https://github.com/davis587/
+// Licenc: GNU GPL
+
+
 import { Component } from '@angular/core';
 import { ApiService } from '../api.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -9,25 +19,31 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class ShipComponent {
   hajoForm: FormGroup;
-  ships: any[] = [];
+  ships: any = [];
 
   constructor(
     private apiService: ApiService,
     private formBuilder: FormBuilder
   ) {
     this.hajoForm = this.formBuilder.group({
-      brand: ['']
+      name: [''],
+      length: [''],
+      price: [''],
+      person: [''],
+      trailer: [''],
     });
   }
 
   ngOnInit() {
     this.gethajo();
   }
-  
+
   gethajo()
   {
     this.apiService.getShips().subscribe(res => {
       this.ships = res;
+      console.log(res);
+      
     });
   }
 
